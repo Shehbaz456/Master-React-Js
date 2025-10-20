@@ -21,14 +21,15 @@ function App() {
 
     for (let i = 0; i <= length; i++) {
       let char = Math.floor(Math.random()*str.length + 1 );
-      console.log(char);
+      // console.log(char);
+      console.log("Str char At",str.charAt(char));
       
       pass += str.charAt(char);
-      console.log(pass);
+      // console.log(pass);
     }
     setPassword(pass)
 
-  },[length,numberAllowed,charAllowed,password])
+  },[length,numberAllowed,charAllowed,setPassword])
 
 
   const copyPasswordToClipboard = useCallback(()=>{
@@ -39,7 +40,7 @@ function App() {
 
   useEffect(()=>{
     passwordGenerator();
-  },[length,numberAllowed,charAllowed,setPassword]);
+  },[length,numberAllowed,charAllowed,password,passwordGenerator]);
 
 
   return (
